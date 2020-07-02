@@ -15,7 +15,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<jdk.version>1.8</jdk.version>
 		<hibernate.core>5.3.7.Final</hibernate.core>
-		<mysql.connector.java>8.0.13</mysql.connector.java>
+		<mysql.connector.java>8.0.16</mysql.connector.java>
 	</properties>
 
 	<dependencies>
