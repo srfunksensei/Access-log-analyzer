@@ -1,17 +1,11 @@
 package com.ef.entity;
 
+import javax.persistence.*;
 import java.util.Date;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
 
 /**
  * Entity class representing Web Access Log line
- * 
+ *
  * @author mb
  *
  */
@@ -23,30 +17,31 @@ public class WebAccessLog {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", updatable = false, nullable = false)
     private long id;
-    
+
+    @Column(name = "date", updatable = false, nullable = false)
     private Date date;
-    
+
+    @Column(name = "ip", updatable = false, nullable = false)
     private String ip;
-    
+
+    @Column(name = "method", updatable = false, nullable = false)
     private String method;
-    
+
+    @Column(name = "http_status_code", updatable = false, nullable = false)
     private int httpStatusCode;
-    
+
+    @Column(name = "user_agent", updatable = false, nullable = false)
     private String userAgent;
 
     public long getId() {
         return id;
     }
 
-    public void setId(long id) {
-        this.id = id;
-    }
-
     public Date getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(final Date date) {
         this.date = date;
     }
 
@@ -54,7 +49,7 @@ public class WebAccessLog {
         return ip;
     }
 
-    public void setIp(String ip) {
+    public void setIp(final String ip) {
         this.ip = ip;
     }
 
@@ -62,7 +57,7 @@ public class WebAccessLog {
         return method;
     }
 
-    public void setMethod(String method) {
+    public void setMethod(final String method) {
         this.method = method;
     }
 
@@ -70,7 +65,7 @@ public class WebAccessLog {
         return httpStatusCode;
     }
 
-    public void setHttpStatusCode(int httpStatusCode) {
+    public void setHttpStatusCode(final int httpStatusCode) {
         this.httpStatusCode = httpStatusCode;
     }
 
@@ -78,7 +73,7 @@ public class WebAccessLog {
         return userAgent;
     }
 
-    public void setUserAgent(String userAgent) {
+    public void setUserAgent(final String userAgent) {
         this.userAgent = userAgent;
     }
 }
