@@ -74,8 +74,8 @@ public class Parser {
                 final List<WebAccessLog> records = WebAccessLogParser.parseFile(filePath);
                 records.forEach(e -> session.saveOrUpdate(e));
 
-                final BlockedIpFilter filter = new BlockedIpFilter(records, startDate, duration, threshold);
-                filter.getBlockedIpAddresses().forEach(e -> {
+                final BlockedIpFilter filter = new BlockedIpFilter(records);
+                filter.getBlockedIpAddresses(startDate, duration, threshold).forEach(e -> {
                     System.out.println(e.getIp());
                     session.saveOrUpdate(e);
                 });
